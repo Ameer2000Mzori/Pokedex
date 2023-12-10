@@ -1,5 +1,6 @@
 // selecting elements
 const head = document.getElementsByClassName("head")[0];
+const inputBtns: any = document.querySelectorAll(".input-Btn");
 
 // our api key / global varibales
 const API_KEY = `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`;
@@ -23,7 +24,7 @@ const listData = async (data) => {
     let pokeIds = `https://pokeapi.co/api/v2/pokemon/${item.name}/`;
     const pokieRes = await fetch(pokeIds);
     const pokieData = await pokieRes.json();
-    console.log(pokieData);
+    // console.log(pokieData);
 
     // sprites front_default
 
@@ -94,3 +95,9 @@ const listData = async (data) => {
 
 // our eventlisnters
 getData(API_KEY);
+
+inputBtns.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    console.log(e.target.value);
+  });
+});

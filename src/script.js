@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 // selecting elements
 var head = document.getElementsByClassName("head")[0];
+var inputBtns = document.querySelectorAll(".input-Btn");
 // our api key / global varibales
 var API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
 //our data fetch api function
@@ -83,7 +84,6 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
                 return [4 /*yield*/, pokieRes.json()];
             case 3:
                 pokieData = _a.sent();
-                console.log(pokieData);
                 pokieTypes = pokieData.types[0].type.name;
                 pokeCard = document.createElement("div");
                 pokeCard.classList.add("poke-Card");
@@ -158,3 +158,8 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
 }); };
 // our eventlisnters
 getData(API_KEY);
+inputBtns.forEach(function (el) {
+    el.addEventListener("click", function (e) {
+        console.log(e.target.value);
+    });
+});
