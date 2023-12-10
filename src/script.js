@@ -39,7 +39,8 @@ var _this = this;
 var head = document.getElementsByClassName("head")[0];
 var inputBtns = document.querySelectorAll(".input-Btn");
 // our api key / global varibales
-var API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
+var requestCount = 10;
+var API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=".concat(requestCount, "&offset=0");
 //our data fetch api function
 function getData(Key) {
     return __awaiter(this, void 0, void 0, function () {
@@ -156,10 +157,15 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
         }
     });
 }); };
+// our change request Count
+var updateRequestCount = function (valNum) {
+    console.log(valNum);
+};
 // our eventlisnters
 getData(API_KEY);
 inputBtns.forEach(function (el) {
     el.addEventListener("click", function (e) {
-        console.log(e.target.value);
+        var valNum = e.target.value;
+        updateRequestCount(valNum);
     });
 });

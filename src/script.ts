@@ -3,7 +3,8 @@ const head = document.getElementsByClassName("head")[0];
 const inputBtns: any = document.querySelectorAll(".input-Btn");
 
 // our api key / global varibales
-const API_KEY = `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`;
+let requestCount = 10;
+const API_KEY = `https://pokeapi.co/api/v2/pokemon?limit=${requestCount}&offset=0`;
 
 //our data fetch api function
 async function getData(Key) {
@@ -93,11 +94,17 @@ const listData = async (data) => {
   }
 };
 
+// our change request Count
+const updateRequestCount = (valNum) => {
+  console.log(valNum);
+};
+
 // our eventlisnters
 getData(API_KEY);
 
 inputBtns.forEach((el) => {
   el.addEventListener("click", (e) => {
-    console.log(e.target.value);
+    let valNum = e.target.value;
+    updateRequestCount(valNum);
   });
 });
