@@ -3,7 +3,31 @@
 $fontOne: "Roboto", sans-serif;
 $fontTwo: "Silkscreen", sans-serif;
 
+$backgroundColor: #fdd8aa;
+
 body {
   padding: 0;
   margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $backgroundColor;
+
+  .poke-Title {
+    font-family: $fontOne;
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  .head {
+    display: flex;
+    height: 80%;
+    width: 80%;
+  }
 }

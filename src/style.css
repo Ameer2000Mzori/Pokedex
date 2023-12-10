@@ -4,3 +4,25 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fdd8aa;
+}
+
+.header .poke-Title {
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.header .head {
+  display: flex;
+  height: 80%;
+  width: 80%;
+}
