@@ -159,7 +159,11 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
 }); };
 // our change request Count
 var updateRequestCount = function (valNum) {
-    console.log(valNum);
+    requestCount = 0;
+    head.innerHTML = "";
+    API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=".concat(valNum, "&offset=0");
+    getData(API_KEY);
+    valNum = 0;
 };
 // our eventlisnters
 getData(API_KEY);
