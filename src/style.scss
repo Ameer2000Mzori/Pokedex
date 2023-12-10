@@ -25,6 +25,38 @@ body {
     font-weight: 600;
   }
 
+  .buttons-Wrap {
+    button {
+      background-color: transparent;
+      border: solid black 2px;
+      color: black;
+      border-radius: 15px;
+      font-family: $fontOne;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: #6e6e6e;
+      color: aliceblue;
+      border: solid white 2px;
+    }
+
+    button:active {
+      cursor: pointer;
+      background-color: #6e6e6e;
+      border: solid black 2px;
+      color: black;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    font-family: $fontOne;
+    font-weight: 600;
+  }
+
   .head {
     display: flex;
     flex-direction: row;

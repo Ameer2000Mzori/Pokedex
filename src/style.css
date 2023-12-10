@@ -21,6 +21,36 @@ body {
   font-weight: 600;
 }
 
+.header .buttons-Wrap button {
+  background-color: transparent;
+  border: solid black 2px;
+  color: black;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.header .buttons-Wrap button:hover {
+  cursor: pointer;
+  background-color: #6e6e6e;
+  color: aliceblue;
+  border: solid white 2px;
+}
+
+.header .buttons-Wrap button:active {
+  cursor: pointer;
+  background-color: #6e6e6e;
+  border: solid black 2px;
+  color: black;
+}
+
+.header p {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
 .header .head {
   display: flex;
   flex-direction: row;
