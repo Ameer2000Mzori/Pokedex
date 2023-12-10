@@ -63,9 +63,10 @@ body {
 }
 
 .header .head .poke-Card .poke-Ifo-Card .poke-Id-Wrap {
-  background-color: #fdd8aa;
-  padding: 3px 8px;
+  background-color: #6e6e6e;
+  padding: 1px 8px;
   border-radius: 5px;
+  color: whitesmoke;
 }
 
 .header .head .poke-Card .poke-Ifo-Card .poke-Name {

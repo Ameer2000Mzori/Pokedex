@@ -87,6 +87,9 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
                 pokieTypes = pokieData.types[0].type.name;
                 pokeCard = document.createElement("div");
                 pokeCard.classList.add("poke-Card");
+                if (pokieTypes === "grass") {
+                    pokeCard.style.backgroundColor = "#C1F2B0";
+                }
                 pokeImg = document.createElement("img");
                 pokeImg.src = "".concat(pokieData.sprites.front_default);
                 pokeImg.classList.add("poke-Img");
@@ -118,16 +121,3 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
 }); };
 // our eventlisnters
 getData(API_KEY);
-// our html tree look up :
-//<div class="poke-Card">
-//   <img
-//     class="poke-Img"
-//     src="https://www.taartprintje.com/image/cache/catalog/taart/Pokemon%20TP1-500x500.PNG"
-//     alt=""
-//   />
-//   <div class="poke-Ifo-Card">
-//     <div class="poke-Id-Wrap">#001</div>
-//     <h1 class="poke-Name">Bulbasaur</h1>
-//     <div class="poke-Type">Type: Grass</div>
-//   </div>
-//</div>
