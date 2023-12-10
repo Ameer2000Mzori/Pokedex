@@ -16,7 +16,7 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: clamp(500px, 100%, 10000px);
   background-color: $backgroundColor;
 
   .poke-Title {
@@ -27,7 +27,58 @@ body {
 
   .head {
     display: flex;
-    height: 80%;
+    flex-direction: row;
+    text-align: start;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    height: 100%;
     width: 80%;
+
+    .poke-Card {
+      background-color: white;
+      border-radius: 1rem;
+      height: 250px;
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 5px;
+      text-align: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgb(55, 56, 56);
+      cursor: pointer;
+      margin: 10px;
+
+      .poke-Img {
+        height: 110px;
+      }
+
+      .poke-Ifo-Card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-family: $fontOne;
+
+        .poke-Id-Wrap {
+          background-color: #fdd8aa;
+          padding: 3px 8px;
+          border-radius: 5px;
+        }
+
+        .poke-Name {
+          font-size: 25px;
+          padding: 0;
+          margin: 0;
+        }
+
+        .poke-Type {
+          font-size: 15px;
+        }
+      }
+    }
   }
 }
