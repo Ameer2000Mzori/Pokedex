@@ -2,7 +2,7 @@
 const head = document.getElementsByClassName("head")[0];
 
 // our api key / global varibales
-const API_KEY = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`;
+const API_KEY = `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`;
 
 //our data fetch api function
 async function getData(Key) {
@@ -42,6 +42,22 @@ const listData = async (data) => {
       pokeCard.style.backgroundColor = `#B2533E`;
     } else if (pokieTypes === "normal") {
       pokeCard.style.backgroundColor = `#CDFAD5`;
+    } else if (pokieTypes === "poison") {
+      pokeCard.style.backgroundColor = `#E4E4D0`;
+    } else if (pokieTypes === "ground") {
+      pokeCard.style.backgroundColor = `#CEE6F3`;
+    } else if (pokieTypes === "fairy") {
+      pokeCard.style.backgroundColor = `#AED8CC`;
+    } else if (pokieTypes === "electric") {
+      pokeCard.style.backgroundColor = `#F0DE36`;
+    } else if (pokieTypes === "ghost") {
+      pokeCard.style.backgroundColor = `#0174BE`;
+    } else if (pokieTypes === "psychic") {
+      pokeCard.style.backgroundColor = `#FFE4A7`;
+    } else if (pokieTypes === "rock") {
+      pokeCard.style.backgroundColor = `#A4907C`;
+    } else {
+      pokeCard.style.backgroundColor = `white`;
     }
 
     const pokeImg = document.createElement("img");
