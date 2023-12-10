@@ -26,6 +26,8 @@ body {
   }
 
   .buttons-Wrap {
+    margin-bottom: 5px;
+
     button {
       background-color: transparent;
       border: solid black 2px;
@@ -49,6 +51,18 @@ body {
       border: solid black 2px;
       color: black;
     }
+  }
+
+  .number-Input {
+    background-color: #fff;
+    border: solid black 2px;
+    color: black;
+    font-family: $fontOne;
+    font-size: 15px;
+    padding: 5px 15px;
+    width: 200px;
+    border-radius: 1rem;
+    outline: none;
   }
 
   p {

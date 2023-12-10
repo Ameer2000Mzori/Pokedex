@@ -21,6 +21,10 @@ body {
   font-weight: 600;
 }
 
+.header .buttons-Wrap {
+  margin-bottom: 5px;
+}
+
 .header .buttons-Wrap button {
   background-color: transparent;
   border: solid black 2px;
@@ -43,6 +47,18 @@ body {
   background-color: #6e6e6e;
   border: solid black 2px;
   color: black;
+}
+
+.header .number-Input {
+  background-color: #fff;
+  border: solid black 2px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  padding: 5px 15px;
+  width: 200px;
+  border-radius: 1rem;
+  outline: none;
 }
 
 .header p {

@@ -32,6 +32,8 @@ const listData = async (data) => {
     // creating our elements dynamclly
     const pokeCard = document.createElement("div");
     pokeCard.classList.add("poke-Card");
+
+    // if else the type of pokie should have its own color
     if (pokieTypes === "grass") {
       pokeCard.style.backgroundColor = `#C1F2B0`;
     } else if (pokieTypes === "fire") {
@@ -60,6 +62,7 @@ const listData = async (data) => {
       pokeCard.style.backgroundColor = `white`;
     }
 
+    // appending dynamiclly created elements to body
     const pokeImg = document.createElement("img");
     pokeImg.src = `${pokieData.sprites.front_default}`;
     pokeImg.classList.add("poke-Img");

@@ -87,6 +87,7 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
                 pokieTypes = pokieData.types[0].type.name;
                 pokeCard = document.createElement("div");
                 pokeCard.classList.add("poke-Card");
+                // if else the type of pokie should have its own color
                 if (pokieTypes === "grass") {
                     pokeCard.style.backgroundColor = "#C1F2B0";
                 }
