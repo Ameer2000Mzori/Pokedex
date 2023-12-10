@@ -38,6 +38,7 @@ var _this = this;
 // selecting elements
 var head = document.getElementsByClassName("head")[0];
 var inputBtns = document.querySelectorAll(".input-Btn");
+var numberInput = document.getElementsByClassName("number-Input")[0];
 // our api key / global varibales
 var requestCount = 10;
 var API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=".concat(requestCount, "&offset=0");
@@ -157,13 +158,29 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
         }
     });
 }); };
-// our change request Count
+// our change request Count by button
 var updateRequestCount = function (valNum) {
     requestCount = 0;
     head.innerHTML = "";
     API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=".concat(valNum, "&offset=0");
     getData(API_KEY);
     valNum = 0;
+};
+// our change count by input number
+var getCountNumInput = function (valVlue, inputEl) {
+    if (valVlue === "0" || 0 || "") {
+        console.log("none");
+    }
+    else if (valVlue >= 1001) {
+        console.log("the number you entered is too high ");
+        valVlue = inputEl.value = 1000;
+        updateRequestCount(valVlue);
+    }
+    else if (valVlue <= 0) {
+        console.log("the number you entered is too low ");
+        valVlue = inputEl.value = 10;
+        updateRequestCount(valVlue);
+    }
 };
 // our eventlisnters
 getData(API_KEY);
@@ -172,4 +189,9 @@ inputBtns.forEach(function (el) {
         var valNum = e.target.value;
         updateRequestCount(valNum);
     });
+});
+numberInput.addEventListener("change", function (e) {
+    var inputEl = e.target;
+    var valVlue = e.target.value;
+    getCountNumInput(valVlue, inputEl);
 });

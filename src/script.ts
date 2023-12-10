@@ -1,6 +1,7 @@
 // selecting elements
 const head = document.getElementsByClassName("head")[0];
 const inputBtns: any = document.querySelectorAll(".input-Btn");
+const numberInput: any = document.getElementsByClassName("number-Input")[0];
 
 // our api key / global varibales
 let requestCount = 10;
@@ -94,7 +95,7 @@ const listData = async (data) => {
   }
 };
 
-// our change request Count
+// our change request Count by button
 const updateRequestCount = (valNum) => {
   requestCount = 0;
   head.innerHTML = ``;
@@ -103,12 +104,32 @@ const updateRequestCount = (valNum) => {
   valNum = 0;
 };
 
+// our change count by input number
+const getCountNumInput = (valVlue, inputEl) => {
+  if (valVlue === "0" || 0 || "") {
+    console.log("none");
+  } else if (valVlue >= 1001) {
+    console.log("the number you entered is too high ");
+    valVlue = inputEl.value = 1000;
+    updateRequestCount(valVlue);
+  } else if (valVlue <= 0) {
+    console.log("the number you entered is too low ");
+    valVlue = inputEl.value = 10;
+    updateRequestCount(valVlue);
+  }
+};
+
 // our eventlisnters
 getData(API_KEY);
-
 inputBtns.forEach((el) => {
   el.addEventListener("click", (e) => {
     let valNum = e.target.value;
     updateRequestCount(valNum);
   });
+});
+
+numberInput.addEventListener("change", (e) => {
+  let inputEl = e.target;
+  let valVlue = e.target.value;
+  getCountNumInput(valVlue, inputEl);
 });
