@@ -34,10 +34,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var _this = this;
 // selecting elements
 var head = document.getElementsByClassName("head")[0];
 // our api key / global varibales
-var API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0";
+var API_KEY = "https://pokeapi.co/api/v2/pokemon?limit=5&offset=0";
 //our data fetch api function
 function getData(Key) {
     return __awaiter(this, void 0, void 0, function () {
@@ -52,7 +53,6 @@ function getData(Key) {
                     return [4 /*yield*/, response.json()];
                 case 2:
                     data = _a.sent();
-                    console.log(data);
                     resultsData = data.results;
                     listData(resultsData);
                     return [3 /*break*/, 4];
@@ -66,11 +66,53 @@ function getData(Key) {
     });
 }
 // our fucntions
-var listData = function (data) {
-    for (var _i = 0, data_1 = data; _i < data_1.length; _i++) {
-        var item = data_1[_i];
-    }
-};
+var listData = function (data) { return __awaiter(_this, void 0, void 0, function () {
+    var _i, data_1, item, pokeIds, pokieRes, pokieData, pokeCard, pokeImg, pokeIfoCard, pokeIdWrap, pokeName, pokeType;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _i = 0, data_1 = data;
+                _a.label = 1;
+            case 1:
+                if (!(_i < data_1.length)) return [3 /*break*/, 5];
+                item = data_1[_i];
+                pokeIds = "https://pokeapi.co/api/v2/pokemon/".concat(item.name, "/");
+                return [4 /*yield*/, fetch(pokeIds)];
+            case 2:
+                pokieRes = _a.sent();
+                return [4 /*yield*/, pokieRes.json()];
+            case 3:
+                pokieData = _a.sent();
+                console.log(pokieData);
+                console.log(pokieData.id);
+                pokeCard = document.createElement("div");
+                pokeCard.classList.add("poke-Card");
+                pokeImg = document.createElement("img");
+                pokeImg.classList.add("poke-Img");
+                pokeCard.appendChild(pokeImg);
+                pokeIfoCard = document.createElement("div");
+                pokeIfoCard.classList.add("poke-Ifo-Card");
+                pokeCard.appendChild(pokeIfoCard);
+                pokeIdWrap = document.createElement("div");
+                pokeIdWrap.classList.add("poke-Id-Wrap");
+                pokeIdWrap.textContent = "##".concat(pokieData.id);
+                pokeIfoCard.appendChild(pokeIdWrap);
+                pokeName = document.createElement("h1");
+                pokeName.classList.add("poke-Name");
+                pokeName.textContent = item.name;
+                pokeIfoCard.appendChild(pokeName);
+                pokeType = document.createElement("div");
+                pokeType.classList.add("poke-Type");
+                pokeCard.appendChild(pokeIfoCard);
+                head.appendChild(pokeCard);
+                _a.label = 4;
+            case 4:
+                _i++;
+                return [3 /*break*/, 1];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); };
 // our eventlisnters
 getData(API_KEY);
 // our html tree look up :
