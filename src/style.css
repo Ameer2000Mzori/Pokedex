@@ -46,10 +46,11 @@ body {
   box-shadow: 0 0 10px rgb(55, 56, 56);
   cursor: pointer;
   margin: 10px;
+  transition: all 250ms;
 }
 
 .header .head .poke-Card .poke-Img {
-  height: 110px;
+  height: 150px;
 }
 
 .header .head .poke-Card .poke-Ifo-Card {
@@ -77,4 +78,9 @@ body {
 
 .header .head .poke-Card .poke-Ifo-Card .poke-Type {
   font-size: 15px;
+}
+
+.header .head .poke-Card:hover {
+  transform: scale(1.2);
+  margin: 25px;
 }

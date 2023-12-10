@@ -2,7 +2,7 @@
 const head = document.getElementsByClassName("head")[0];
 
 // our api key / global varibales
-const API_KEY = `https://pokeapi.co/api/v2/pokemon?limit=5&offset=0`;
+const API_KEY = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`;
 
 //our data fetch api function
 async function getData(Key) {
@@ -34,6 +34,14 @@ const listData = async (data) => {
     pokeCard.classList.add("poke-Card");
     if (pokieTypes === "grass") {
       pokeCard.style.backgroundColor = `#C1F2B0`;
+    } else if (pokieTypes === "fire") {
+      pokeCard.style.backgroundColor = `#FFCD4B`;
+    } else if (pokieTypes === "water") {
+      pokeCard.style.backgroundColor = `#80B3FF`;
+    } else if (pokieTypes === "bug") {
+      pokeCard.style.backgroundColor = `#B2533E`;
+    } else if (pokieTypes === "normal") {
+      pokeCard.style.backgroundColor = `#CDFAD5`;
     }
 
     const pokeImg = document.createElement("img");
