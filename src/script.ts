@@ -24,13 +24,17 @@ const listData = async (data) => {
     const pokieRes = await fetch(pokeIds);
     const pokieData = await pokieRes.json();
     console.log(pokieData);
-    console.log(pokieData.id);
+
+    // sprites front_default
+
+    let pokieTypes = pokieData.types[0].type.name;
 
     // creating our elements dynamclly
     const pokeCard = document.createElement("div");
     pokeCard.classList.add("poke-Card");
 
     const pokeImg = document.createElement("img");
+    pokeImg.src = `${pokieData.sprites.front_default}`;
     pokeImg.classList.add("poke-Img");
     pokeCard.appendChild(pokeImg);
 
@@ -50,6 +54,8 @@ const listData = async (data) => {
 
     const pokeType = document.createElement("div");
     pokeType.classList.add("poke-Type");
+    pokeType.textContent = pokieTypes;
+    pokeIfoCard.appendChild(pokeType);
     pokeCard.appendChild(pokeIfoCard);
 
     head.appendChild(pokeCard);

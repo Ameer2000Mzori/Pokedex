@@ -67,7 +67,7 @@ function getData(Key) {
 }
 // our fucntions
 var listData = function (data) { return __awaiter(_this, void 0, void 0, function () {
-    var _i, data_1, item, pokeIds, pokieRes, pokieData, pokeCard, pokeImg, pokeIfoCard, pokeIdWrap, pokeName, pokeType;
+    var _i, data_1, item, pokeIds, pokieRes, pokieData, pokieTypes, pokeCard, pokeImg, pokeIfoCard, pokeIdWrap, pokeName, pokeType;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -84,10 +84,11 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
             case 3:
                 pokieData = _a.sent();
                 console.log(pokieData);
-                console.log(pokieData.id);
+                pokieTypes = pokieData.types[0].type.name;
                 pokeCard = document.createElement("div");
                 pokeCard.classList.add("poke-Card");
                 pokeImg = document.createElement("img");
+                pokeImg.src = "".concat(pokieData.sprites.front_default);
                 pokeImg.classList.add("poke-Img");
                 pokeCard.appendChild(pokeImg);
                 pokeIfoCard = document.createElement("div");
@@ -103,6 +104,8 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
                 pokeIfoCard.appendChild(pokeName);
                 pokeType = document.createElement("div");
                 pokeType.classList.add("poke-Type");
+                pokeType.textContent = pokieTypes;
+                pokeIfoCard.appendChild(pokeType);
                 pokeCard.appendChild(pokeIfoCard);
                 head.appendChild(pokeCard);
                 _a.label = 4;
