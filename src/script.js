@@ -181,6 +181,10 @@ var getCountNumInput = function (valVlue, inputEl) {
         valVlue = inputEl.value = 10;
         updateRequestCount(valVlue);
     }
+    else {
+        valVlue = inputEl.value;
+        updateRequestCount(valVlue);
+    }
 };
 // our eventlisnters
 getData(API_KEY);

@@ -116,6 +116,9 @@ const getCountNumInput = (valVlue, inputEl) => {
     console.log("the number you entered is too low ");
     valVlue = inputEl.value = 10;
     updateRequestCount(valVlue);
+  } else {
+    valVlue = inputEl.value;
+    updateRequestCount(valVlue);
   }
 };
 
