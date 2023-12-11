@@ -110,10 +110,11 @@ body {
 }
 
 .header .head .poke-Card .poke-Ifo-Card .poke-Id-Wrap {
-  background-color: #6e6e6e;
+  background-color: #857e7e;
   padding: 1px 8px;
   border-radius: 5px;
   color: whitesmoke;
+  border: dotted black 1px;
 }
 
 .header .head .poke-Card .poke-Ifo-Card .poke-Name {
