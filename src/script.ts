@@ -77,7 +77,15 @@ const listData = async (data) => {
 
     const pokeIdWrap = document.createElement("div");
     pokeIdWrap.classList.add("poke-Id-Wrap");
-    pokeIdWrap.textContent = `##${pokieData.id}`;
+
+    // if id is higher then 9 then # else ##
+
+    if (pokieData.id < 10) {
+      pokeIdWrap.textContent = `##${pokieData.id}`;
+    } else {
+      pokeIdWrap.textContent = `#${pokieData.id}`;
+    }
+
     pokeIfoCard.appendChild(pokeIdWrap);
 
     const pokeName = document.createElement("h1");

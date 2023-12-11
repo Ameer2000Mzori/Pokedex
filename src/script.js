@@ -138,7 +138,13 @@ var listData = function (data) { return __awaiter(_this, void 0, void 0, functio
                 pokeCard.appendChild(pokeIfoCard);
                 pokeIdWrap = document.createElement("div");
                 pokeIdWrap.classList.add("poke-Id-Wrap");
-                pokeIdWrap.textContent = "##".concat(pokieData.id);
+                // if id is higher then 9 then # else ##
+                if (pokieData.id < 10) {
+                    pokeIdWrap.textContent = "##".concat(pokieData.id);
+                }
+                else {
+                    pokeIdWrap.textContent = "#".concat(pokieData.id);
+                }
                 pokeIfoCard.appendChild(pokeIdWrap);
                 pokeName = document.createElement("h1");
                 pokeName.classList.add("poke-Name");
