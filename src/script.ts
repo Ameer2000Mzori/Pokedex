@@ -26,7 +26,6 @@ const listData = async (data) => {
     let pokeIds = `https://pokeapi.co/api/v2/pokemon/${item.name}/`;
     const pokieRes = await fetch(pokeIds);
     const pokieData = await pokieRes.json();
-    // console.log(pokieData);
 
     // sprites front_default
 
